@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireHo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="./font-awesome/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
+        html {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+
+        /* Optional: show position indicator in red */
+        ::-webkit-scrollbar-thumb {
+            background: #FF0000;
+        }
+
+        /* GLOBAL STYLES */
+        body {
+            background: #fff;
+            font-family: 'Open Sans', sans-serif;
+            color: #555;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        body * {
+            position: relative;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #024d94;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 28px;
+            font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        b,
+        strong {
+            font-weight: 900;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        a:hover {
+            color: #024d94;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        button,
+        button:hover {
+            outline: 0;
+            text-decoration: none;
+            transition: .4s;
+            box-shadow: none !important;
+        }
+
+        ul,
+        ol,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .btn.btn-lg {
+            font-size: 14px;
+        }
+
+        .btn.btn-wb {
+            color: #024d94;
+            background-color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn.btn-wb:hover {
+            border: 2px solid #fff !important;
+            background: transparent;
+            color: #fff;
+        }
+
+        .btn.btn-bw {
+            color: #fff;
+            background-color: #024d94;
+            border: 2px solid #024d94;
+        }
+
+        .btn.btn-bw:hover {
+            border: 2px solid #024d94 !important;
+            background: transparent;
+            color: #024d94;
+        }
+
+        .btn {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 700;
+            text-transform: capitalize;
+            padding: 10px 20px 10px 20px;
+            border: none;
+            border-radius: 0;
+            font-family: Nunito Sans;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .text-align-right * {
+            text-align: right;
+        }
+    </style>
+    <style>
+        .hero {
+            background: linear-gradient(270deg, #024d94 50%, #fff 50%);
+            background-size: cover;
+            padding: 130px 0 130px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            text-transform: none;
+            font-weight: 900;
+            margin: 0 0 0;
+            padding: 10px;
+        }
+
+        .hero_container {
+            min-height: 106px;
+        }
+
+        .about_quote {
+            opacity: 0;
+            color: #fff;
+            font-weight: 100 !important;
+            transform: translateX(90deg);
+        }
+
+        .scrooll_down {
+            opacity: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            background-color: #000;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="overlay" style="width: 50%;top: 0; left: 0; background: #024d94; z-index: 1000;"></div>
+        <div class="overlay" style="width: 50%;top: 0;right: 0; background: #fff;  z-index: 1000;"></div>
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div>
+                        <div class="overlay" style="color: #fff;right: 0;background: #024d94; z-index: 999;">
+                        </div>
+                        <div class="hero_container">
+                            <h1 class="hero_heading">
+                                <span></span>
+                            </h1>
+                        </div>
+                        <h1>
+                            Hiring
+                        </h1>
+                    </div>
+                    <div class="pt-5 pl-2">
+                        <a href="#" class="btn btn-lg btn-bw">
+                            Post a job
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-align-right">
+                    <div>
+                        <div class="overlay" style="background-color: #fff;left: 0;z-index: 999;">
+                        </div>
+                        <h1 class="text-white">
+                            Transparent <br />
+                            & <br />
+                            Rewarding
+                        </h1>
+                        <h3>
+                            <blockquote class="blockquote pt-3">
+                                <footer class="blockquote-footer about_quote">We are building an
+                                    <strong>Ecosystem</strong></footer>
+                            </blockquote>
+                        </h3>
+                    </div>
+                    <div class="pt-5 pl-2">
+                        <a href="#" class="btn btn-lg btn-wb">
+                            Post a job
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scrooll_down" style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 48px;
+            margin-left: -15px;
+        ">
+            <i class="fas fa-angle-double-down" style="
+            background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
+            background: -webkit-linear-gradient(top, #e72c83 0%,#a742c6 100%);
+            background: linear-gradient(90deg, #024d94 50%,#fff 50%);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color:transparent;
+        "></i>
+        </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/TextPlugin.min.js"></script>
+    <script>
+        $(window).on("load", () => {
+            var controller = new ScrollMagic.Controller();
+            // var scene = new ScrollMagic.Scene({
+            //     triggerElement: ".hero",
+            //     duration: 3000, triggerHook: 0
+            // }).addIndicators().addTo(controller).setPin(".hero");
+
+            var hero_heading = $(".hero_heading span");
+            var duration = 1;
+            var textPlugin = gsap.timeline().repeat(-1).to(hero_heading, duration, { text: "Fast" })
+                .to(hero_heading, duration, { text: "" }, `+=${duration * 2}`)
+                .to(hero_heading, duration, { text: "Cheap" }, `+=${duration / 5}`)
+                .to(hero_heading, duration, { text: "" }, `+=${duration * 2}`)
+                .to(hero_heading, duration, { text: "Simple" }, `+=${duration / 5}`).to(hero_heading, duration, { text: "" }, `+=${duration * 2}`);
+            var hero = gsap.timeline({ paused: true });
+            var heroOverlay = $(".hero .overlay");
+            hero
+                .to([heroOverlay[0], heroOverlay[1]], duration, {
+                    css: {
+                        width: 0
+                    },
+                    ease: Power4.easeInOut,
+                })
+                .to([heroOverlay[2], heroOverlay[3]], duration, {
+                    css: {
+                        width: 0
+                    },
+                    ease: Power4.easeInOut,
+                }, `-=${duration / 2}`)
+                .to(".about_quote", duration, {
+                    rotationX: 0,
+                    opacity: 1,
+                    ease: Power1.easeIn,
+                    transformOrigin: "bottom center", ease: 'power3.inOut'
+                }, `-=${duration / 2}`)
+                .from(".wrapper p", {
+                    duration: duration,
+                    yPercent: 100,
+                    ease: "power4",
+                }, `-=${duration / 2}`);
+            hero.play()
+            gsap.to(".scrooll_down", {
+                duration: 3,
+                opacity: 1,
+                ease: "bounce.out",
+                y: "+=250", //move each box 500px to right
+                repeat: -1
+            });
+
+        });
+    </script>
+</body>
+
+</html>
