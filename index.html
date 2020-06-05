@@ -192,15 +192,15 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">
                     <div>
-                        <div class="overlay" style="color: #fff;right: 0;background: #024d94; z-index: 999;">
-                        </div>
-                        <div class="hero_container">
-                            <h1 class="hero_heading">
-                                <span></span>
-                            </h1>
-                        </div>
-                        <h1>
-                            Hiring
+                        <h1 class="hero_heading">
+                            <span></span>
+                        </h1>
+                        <h1 class="hero_heading">
+                            <span></span>
+                        </h1>
+
+                        <h1 class="hero_heading">
+                            <span></span>
                         </h1>
                     </div>
                     <div class="pt-5 pl-2">
@@ -245,8 +245,8 @@
             margin-left: -15px;
         ">
             <i class="fas fa-angle-double-down" style="
-            background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-            background: -webkit-linear-gradient(top, #e72c83 0%,#a742c6 100%);
+            background: -moz-linear-gradient(90deg, #024d94 50%,#fff 50%);
+            background: -webkit-linear-gradient(90deg, #024d94 50%,#fff 50%);
             background: linear-gradient(90deg, #024d94 50%,#fff 50%);
             -webkit-background-clip: text;
             -moz-background-clip: text;
@@ -274,11 +274,11 @@
 
             var hero_heading = $(".hero_heading span");
             var duration = 1;
-            var textPlugin = gsap.timeline().repeat(-1).to(hero_heading, duration, { text: "Fast" })
-                .to(hero_heading, duration, { text: "" }, `+=${duration * 2}`)
-                .to(hero_heading, duration, { text: "Cheap" }, `+=${duration / 5}`)
-                .to(hero_heading, duration, { text: "" }, `+=${duration * 2}`)
-                .to(hero_heading, duration, { text: "Simple" }, `+=${duration / 5}`).to(hero_heading, duration, { text: "" }, `+=${duration * 2}`);
+            // var textPlugin = gsap.timeline().repeat(-1).to(hero_heading, duration, { text: "Fast" })
+            //     .to(hero_heading, duration, { text: "" }, `+=${duration * 2}`)
+            //     .to(hero_heading, duration, { text: "Cheap" }, `+=${duration / 5}`)
+            //     .to(hero_heading, duration, { text: "" }, `+=${duration * 2}`)
+            //     .to(hero_heading, duration, { text: "Simple" }, `+=${duration / 5}`).to(hero_heading, duration, { text: "" }, `+=${duration * 2}`);
             var hero = gsap.timeline({ paused: true });
             var heroOverlay = $(".hero .overlay");
             hero
@@ -288,12 +288,21 @@
                     },
                     ease: Power4.easeInOut,
                 })
-                .to([heroOverlay[2], heroOverlay[3]], duration, {
+                .to(heroOverlay[2], duration, {
                     css: {
                         width: 0
                     },
                     ease: Power4.easeInOut,
                 }, `-=${duration / 2}`)
+                .to(hero_heading[0], duration, {
+                    text: "Fast."
+                }, "-=0.7")
+                .to(hero_heading[1], duration, {
+                    text: "Cheap."
+                })
+                .to(hero_heading[2], duration, {
+                    text: "Simple Hiring"
+                })
                 .to(".about_quote", duration, {
                     rotationX: 0,
                     opacity: 1,
@@ -306,15 +315,14 @@
                     ease: "power4",
                 }, `-=${duration / 2}`).to(".btn_overlay", duration, {
                     height: 0
-                }, `-=${duration * 2}`);
+                }, `-=${duration * 2}`).to(".scrooll_down", {
+                    duration: 3,
+                    opacity: 1,
+                    ease: "bounce.out",
+                    y: "+=250", //move each box 500px to right
+                    repeat: -1
+                });
             hero.play()
-            gsap.to(".scrooll_down", {
-                duration: 3,
-                opacity: 1,
-                ease: "bounce.out",
-                y: "+=250", //move each box 500px to right
-                repeat: -1
-            });
 
         });
     </script>
