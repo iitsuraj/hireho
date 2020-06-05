@@ -174,7 +174,8 @@
             opacity: 0;
         }
 
-        .overlay {
+        .overlay,
+        .btn_overlay {
             position: absolute;
             background-color: #000;
             width: 100%;
@@ -203,6 +204,7 @@
                         </h1>
                     </div>
                     <div class="pt-5 pl-2">
+                        <div class="btn_overlay" style="z-index: 997; background: #fff;"></div>
                         <a href="#" class="btn btn-lg btn-bw">
                             Post a job
                         </a>
@@ -225,8 +227,10 @@
                         </h3>
                     </div>
                     <div class="pt-5 pl-2">
+                        <div class="btn_overlay" style="z-index: 997; background: #024d94;"></div>
+
                         <a href="#" class="btn btn-lg btn-wb">
-                            Post a job
+                            Know more
                         </a>
                     </div>
                 </div>
@@ -250,6 +254,9 @@
             -webkit-text-fill-color:transparent;
         "></i>
         </div>
+
+    </section>
+    <section class="work">
 
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -297,7 +304,9 @@
                     duration: duration,
                     yPercent: 100,
                     ease: "power4",
-                }, `-=${duration / 2}`);
+                }, `-=${duration / 2}`).to(".btn_overlay", duration, {
+                    height: 0
+                }, `-=${duration * 2}`);
             hero.play()
             gsap.to(".scrooll_down", {
                 duration: 3,
